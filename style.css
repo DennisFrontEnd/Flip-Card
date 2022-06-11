@@ -1,0 +1,100 @@
+#cards {
+  /* default 軸 - row */
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  /* 卡片在容器內的排版 */
+  /* flex-basis, flex-grow, flex-shrink */
+  flex: 7% 0 1;
+  height: 8vw;
+  border: 2px solid #e0e0e0;
+  margin: 1.5px;
+  /* 卡片內部元素的排版 */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+/* 限制卡牌圖案大小 */
+.card img {
+  max-width: 30%;
+  align-self: center;
+}
+
+/* 修改卡牌的兩個數字的文字大小及margin */
+.card p {
+  margin: 3px;
+  font-size: 10px;
+}
+
+/* 修改卡牌下方的數字 */
+.card p:last-child {
+  transform: rotate(180deg);
+}
+
+.back {
+  background: url('https://assets-lighthouse.alphacamp.co/uploads/image/file/9222/ExportedContentImage_00.png');
+  background-size: cover;
+}
+
+.paired {
+  background-color: #dae0e3;
+}
+
+#header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  width: 100%;
+}
+
+#header .title {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+#header .title img {
+  max-width: 4em;
+}
+
+#header .score {
+  margin: 0;
+  color: #6c90ac;
+}
+
+.wrong {
+  animation: wrongAnimation 0.25s 4;
+}
+
+@keyframes wrongAnimation {
+  100% {
+    border: 2px solid red;
+  }
+}
+
+/** Game finished **/
+.completed {
+  position: absolute;
+  z-index: 999;
+  top: 33vh;
+  background-color: RGBA(232, 246, 254, 0.8);
+  width: 100vw;
+  padding: 50px 0;
+}
+
+.completed>p {
+  font-size: 1.5em;
+  color: black;
+  text-align: center;
+  margin: 0;
+}
+
+.completed>p:first-child {
+  font-size: 3em;
+  font-weight: 700;
+  color: #758d9a;
+}
